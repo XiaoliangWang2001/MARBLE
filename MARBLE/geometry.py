@@ -198,6 +198,7 @@ def compute_distribution_distances(clusters=None, data=None, slices=None):
     """
     s = slices
     pdists, cdists = None, None
+    gamma = None
     if clusters is not None:
         # compute discrete measures supported on cluster centroids
         labels = clusters["labels"]
