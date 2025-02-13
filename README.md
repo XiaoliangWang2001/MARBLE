@@ -26,7 +26,7 @@ If you find this package useful or inspirational, please cite our work as follow
 
 ## Documentation
 
-See full documentation [here](https://agosztolai.github.io/MARBLE/).
+See full documentation [here](https://dynamics-of-neural-systems-lab.github.io/MARBLE/).
 
 
 ## Installation
@@ -77,7 +77,7 @@ Running the scripts in the `/examples` folder to reproduce our results will rely
 
 ## Quick start
 
-We suggest you study at least the example of a [simple vector fields over flat surfaces](https://github.com/agosztolai/MARBLE/blob/main/examples/toy_examples/ex_vector_field_flat_surface.py) to understand what behaviour to expect.
+We suggest you study at least the example of a [simple vector fields over flat surfaces](https://github.com/Dynamics-of-Neural-Systems-Lab/MARBLE/blob/main/examples/toy_examples/ex_vector_field_flat_surface.py) to understand what behaviour to expect.
 
 Briefly, MARBLE takes two inputs
 
@@ -141,7 +141,7 @@ There are loads of parameters to adjust these plots, so look at the respective f
 
 ## Examples
 
-The folder [/examples](https://github.com/agosztolai/MARBLE/tree/main/examples) contains scripts for some basic examples and other scripts to reproduce the results in our paper.
+The folder [/examples](https://github.com/Dynamics-of-Neural-Systems-Lab/MARBLE/tree/main/examples) contains scripts for some basic examples and other scripts to reproduce the results in our paper.
 
 ## Further details
 
@@ -178,7 +178,7 @@ This command will do several things.
 1. `spacing = 0.03` means the points will be subsampled using farthest point sampling to ensure that features are not overrepresented. The average distance between the subsampled points will equal 3% of the manifold diameter.
 2. `number_of_resamples = 2` resamples the dataset twice, which is particularly useful when subsampling the data using `spacing`. This will effectively double the training data because a new adjacency graph will be fit.
 3. `delta = 1.2` is a continuous parameter that adapts the density of the graph edges based on sample density. It is the single most useful parameter to tune MARBLE representations, with a higher `delta` achieving more 'unfolded' representations, as the cost of breaking things apart for too high `delta`. It has a similar effect to the minimum distance parameter in UMAP.
-4. `local_gauge=True` means that operations will be performed in local (manifold) gauges. The code will perform tangent space alignments before computing gradients. However, this will increase the cost of the computations $m^2$-fold, where $m$ is the manifold dimension because points will be treated as vector spaces. See the example of a [simple vector fields over curved surfaces](https://github.com/agosztolai/MARBLE/blob/main/examples/toy_examples/ex_vector_field_curved_surface.py) for illustration.
+4. `local_gauge=True` means that operations will be performed in local (manifold) gauges. The code will perform tangent space alignments before computing gradients. However, this will increase the cost of the computations $m^2$-fold, where $m$ is the manifold dimension because points will be treated as vector spaces. See the example of a [simple vector fields over curved surfaces](https://github.com/Dynamics-of-Neural-Systems-Lab/MARBLE/blob/main/examples/toy_examples/ex_vector_field_curved_surface.py) for illustration.
 
 
 <a name="training"></a>
@@ -229,7 +229,7 @@ One of the main features of our method is the ability to run in two different mo
 
 To enable embedding-agnostic mode, set `inner_product_features = True` in training `params`. This engages an additional layer in the network after the computation of gradients, which makes them rotation invariant.
 
-As a slight cost of expressivity, this feature enables the orientation- and embedding-independent representation of dynamics over the manifolds. Amongst others, this allows one to recognise similar dynamics across different manifolds. See [RNN example](https://github.com/agosztolai/MARBLE/blob/main/examples/RNN/RNN.ipynb) for an illustration.
+As a slight cost of expressivity, this feature enables the orientation- and embedding-independent representation of dynamics over the manifolds. Amongst others, this allows one to recognise similar dynamics across different manifolds. See [RNN example](https://github.com/Dynamics-of-Neural-Systems-Lab/MARBLE/blob/main/examples/RNN/RNN.ipynb) for an illustration.
 
 
 ## Troubleshooting guide
