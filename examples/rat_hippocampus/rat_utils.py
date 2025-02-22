@@ -14,7 +14,7 @@ import MARBLE
 import cebra
 
 def convert_spikes_to_rates(spikes,
-                            labels,
+                            labels=None,
                             pca=None,
                             pca_n=10,
                             spiking_rates=True,
@@ -42,7 +42,8 @@ def convert_spikes_to_rates(spikes,
 
     rates_pca = rates_pca[:-1,:] # skip last
 
-    labels = labels[:rates_pca.shape[0]]
+    if labels is not None:
+        labels = labels[:rates_pca.shape[0]]
     
     data = MARBLE.construct_dataset(
         anchor=rates_pca,
